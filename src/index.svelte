@@ -1,16 +1,24 @@
 <script>
-  import { createEventDispatcher, onDestroy, onMount } from 'svelte'
+  import { onDestroy, onMount } from 'svelte'
+  import { get_current_component } from 'svelte/internal'
   import { fade } from 'svelte/transition'
   import { isLoading, t, locale } from 'svelte-i18n'
   import setupI18N from './lib/i18n'
   import Styles from './styles.svelte'
   import Clock from './clock/Clock.svelte'
 
+  const customElement = get_current_component()
+
+  const dispatch = (name, detail) => {
+    customElement.dispatchEvent(new CustomEvent(name, {
+      detail,
+      composed: true
+    }))
+  }
+
   export let title = 'Hello from component!!'
   let initialized = false
   let visible = true
-
-  const dispatch = createEventDispatcher()
 
   const unsuscribeLangChange = locale.subscribe(lang => {
     if (lang) {
