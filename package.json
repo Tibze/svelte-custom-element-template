@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/svelte-custom-element.js",
   "scripts": {
+    "serve": "node ./scripts/serve.js",
     "build": "node ./scripts/build.js",
     "lint": "eslint --ext .js --ext .svelte src/",
     "start": "npm run storybook",

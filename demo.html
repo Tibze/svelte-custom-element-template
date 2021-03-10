@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<svelte-custom-element></svelte-custom-element>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        document.querySelector('svelte-custom-element').addEventListener("language-change", e => {
+            alert(`Got language-change event with detail: ${e.detail}`);
+        });
+    });
+</script>
+<script defer src="dist/svelte-custom-element.0.1.0.min.js"></script>
+</body>
+</html>
