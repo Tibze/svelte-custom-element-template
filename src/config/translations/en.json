@@ -1,3 +1,8 @@
 {
-  "text:example-paragraph": "This is an example paragraph"
+  "index:title": "Todo List Example [Svelte]",
+  "index:description": "Webcomponent <todo-list>",
+  "form:placeholder": "Do the wasing machine...",
+  "form:buttonLabel": "Add",
+  "list:nothingHere": "Nothing here",
+  "list:buttonLabel": "Remove"
 }

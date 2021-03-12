@@ -1,0 +1,8 @@
+{
+  "index:title": "Todo List Exemple [Svelte]",
+  "index:description": "Webcomponent <todo-list>",
+  "form:placeholder": "Faire la vaiselle...",
+  "form:buttonLabel": "Ajouter",
+  "list:nothingHere": "Rien à afficher",
+  "list:buttonLabel": "Supprimer"
+}

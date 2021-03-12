@@ -1,14 +1,7 @@
-import CustomElement from './index.svelte'
+import TodoList from './index.svelte'
 
-export default { title: 'CustomElement' }
+export default { title: '<todo-list>' }
 
-export const CustomElementStory = () => ({
-  Component: CustomElement,
-})
-
-export const CustomElementStoryWithProps = () => ({
-  Component: CustomElement,
-  props: {
-    title: 'Hello from props!!',
-  },
+export const TodoListStory = () => ({
+  Component: TodoList,
 })

@@ -73,12 +73,30 @@
 </script>
 
 <style type="text/scss" lang="scss">
-  h1 {
+  h1, p {
     font-family: 'Open Sans', sans-serif;
   }
 
   .clock-container {
     width: 500px;
+  }
+
+  .main-wrapper {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .button {
+    font-family: 'Open Sans', sans-serif;
+    background-color: black;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    margin-left: 5px;
+    padding: 0 20px;
+  }
+
+  .form-comp {
+    margin-bottom: 10px;
   }
 </style>
 
@@ -87,16 +105,30 @@
 {#if $isLoading || !initialized}
   <p>Please wait...</p>
 {:else}
-  <h1>{title}</h1>
-
-  <p>{$t('text:example-paragraph')}</p>
-
-  <button on:click={changeLang('en')}>EN</button>
-  <button on:click={changeLang('es')}>ES</button>
+  <div class='lang-wrapper'>
+    <button class='button' on:click={changeLang('en')}>EN</button>
+    <button class='button' on:click={changeLang('fr')}>FR</button>
+  </div>
+  <h1>{$t('index:title')}</h1>
+  <p>{$t('index:description')}</p>
 
   <div class="main-wrapper">
-    <Form on:addTodo={addTodo} />
-    <List todos={todos} on:removeTodo={removeTodo} />
+    <div class='form-comp'>
+      <Form
+        placeholder={$t('form:placeholder')}
+        buttonLabel={$t('form:buttonLabel')}
+        on:addTodo={addTodo}
+      />
+    </div>
+    <div class='form-comp'>
+      <List
+        class='list-comp'
+        noData={$t('list:nothingHere')}
+        buttonLabel={$t('list:buttonLabel')}
+        todos={todos}
+        on:removeTodo={removeTodo}
+      />
+    </div>
   </div>
 {/if}
-<svelte:options tag="svelte-custom-element" />
+<svelte:options tag="todo-list" />

@@ -1,6 +1,8 @@
 <script>
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
+    export let placeholder = '[placeholder]'
+    export let buttonLabel = '[buttonLabel]'
     let input = "";
     function addTodo() {
         dispatch('addTodo', {
@@ -9,19 +11,30 @@
     }
 </script>
 
-<form class="field has-addons" style="justify-content: center" on:submit|preventDefault={addTodo}>
-    <div class="control">
-        <input bind:value={input} class="input" type="text" placeholder="TODO">
-    </div>
-    <div class="control">
-        <button class="button is-primary">
-            Ajouter
-        </button>
-    </div>
+<form on:submit|preventDefault={addTodo}>
+    <input bind:value={input} class="input" type="text" placeholder={placeholder}>
+    <button class="button">
+        {buttonLabel}
+    </button>
 </form>
 
 <style type="text/scss" lang="scss">
   form {
-    border: 1px solid red;
+    display: flex;
+  }
+  .input {
+      font-family: 'Open Sans', sans-serif;
+      border-radius: 5px;
+      border: 1px solid lightgrey;
+      padding: 1em;
+  }
+  .button {
+      font-family: 'Open Sans', sans-serif;
+      background-color: black;
+      border: 0;
+      border-radius: 5px;
+      color: white;
+      margin-left: 5px;
+      padding: 0 20px;
   }
 </style>

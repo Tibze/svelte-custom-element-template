@@ -1,14 +1,14 @@
 import { addMessages, getLocaleFromNavigator, init } from 'svelte-i18n'
 
 import en from '../config/translations/en.json'
-import es from '../config/translations/es.json'
+import fr from '../config/translations/fr.json'
 
 const setupI18N = () => {
   addMessages('en', en)
-  addMessages('es', es)
+  addMessages('fr', fr)
 
   init({
-    fallbackLocale: 'en',
+    fallbackLocale: 'fr',
     initialLocale: getLocaleFromNavigator(),
   })
 }

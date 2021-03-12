@@ -1,6 +1,6 @@
 {
-  "name": "svelte-custom-element",
-  "version": "0.1.0",
+  "name": "todo-list",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/svelte-custom-element.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "start": "npm run storybook",
     "storybook": "node ./scripts/pre-storybook.js && start-storybook -s ./.storybook/static -p 8086",
     "test": "jest src --passWithNoTests && npm run build",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "doc": "node node_modules/web-component-analyzer/cli.js analyze dist/todo-list.js --outFile dist/todo-list.json --format json"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
@@ -50,7 +51,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.12.1",
-    "svelte-i18n": "^3.1.0"
+    "svelte-i18n": "^3.1.0",
+    "web-component-analyzer": "^1.1.6"
   },
   "repository": {
     "type": "git",
