@@ -8,13 +8,13 @@
   import Form from './components/Form.svelte'
   import List from './components/List.svelte'
 
-  const production = !!get_current_component().dispatchEvent
+  const isWc = !!get_current_component().dispatchEvent
 
   const customElement = get_current_component()
 
   let dispatch = null
 
-  if (production) {
+  if (isWc) {
     dispatch = (name, detail) => {
       customElement.dispatchEvent(new CustomEvent(name, {
         detail,
